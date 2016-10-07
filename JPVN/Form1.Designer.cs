@@ -33,7 +33,7 @@
             // 
             // btnLearnLetter
             // 
-            this.btnLearnLetter.Location = new System.Drawing.Point(175, 124);
+            this.btnLearnLetter.Location = new System.Drawing.Point(181, 91);
             this.btnLearnLetter.Name = "btnLearnLetter";
             this.btnLearnLetter.Size = new System.Drawing.Size(75, 23);
             this.btnLearnLetter.TabIndex = 0;
