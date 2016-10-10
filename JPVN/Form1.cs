@@ -38,6 +38,14 @@ namespace JPVN
             this.Show();
         }
 
+        private void btnStudy_Click(object sender, EventArgs e)
+        {
+            Study study = new Study();
+            this.Hide();
+            study.ShowDialog();
+            this.Show();
+        }
+
 
 
 

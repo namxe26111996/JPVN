@@ -14,14 +14,20 @@ namespace JPVN.DataAccess
 {
     class DataConnect
     {
-        // private MySqlConnection _conn;
+
+        //infor load from config
         private string _port;
         private string _server;
         private string _database;
         private string _uid;
         private string _pwd;
         private string _sqlServer;
+
+        //connect
         private SqlConnection _conn = null;
+        SqlCommand command;
+        SqlDataReader reader;
+
         public DataConnect()
         {
             _port = ConfigurationManager.AppSettings["Port"];
@@ -63,16 +69,15 @@ namespace JPVN.DataAccess
             //get query
             try
             {
-               
-                    connect();
-                    
+
+                connect();
+
 
                 //1 is hiragana   , 2 is katakana
-
-                // MySqlCommand command = _conn.CreateCommand();
-                SqlCommand command = _conn.CreateCommand();
+                command = _conn.CreateCommand();
+                reader = command.ExecuteReader();
                 command.CommandText = "SELECT ID, symbol, Romanj, Image, Audio FROM letter where Type = " + typeLetter;
-                SqlDataReader reader = command.ExecuteReader();
+
                 while (reader.Read())
                 {
                     string idString = reader["ID"].ToString();
@@ -84,6 +89,50 @@ namespace JPVN.DataAccess
 
                     Letter letter = new Letter(id, symbol, romanj, urlImage, urlAudio, typeLetter);
                     lst.Add(letter);
+                }
+
+
+                //end if
+            }
+            catch
+            {
+
+            }
+            _conn.Close();
+            return lst;
+        }
+
+        /// <summary>
+        /// getAll word by lession
+        /// </summary>
+        /// <param name="typeLetter"></param>
+        /// <returns>ArrayList Word</returns>
+        public ArrayList getAllWordByLession(int lessionId)
+        {
+            ArrayList lst = new ArrayList();
+            //get query
+            try
+            {
+
+                connect();
+
+
+                
+                command = _conn.CreateCommand();
+                reader = command.ExecuteReader();
+                command.CommandText = "SELECT ID, Symbol, Romanj, Image, Meaning FROM Vocabulary where IdLession = " + lessionId;
+
+                while (reader.Read())
+                {
+                    string idString = reader["ID"].ToString();
+                    int id = int.Parse(idString);
+                    string romanj = reader["Romanj"].ToString();
+                    string symbol = reader["Symbol"].ToString();
+                    string urlImage = reader["Image"].ToString();
+                    string meaning = reader["Meaning"].ToString();
+
+                    NewWord nWord = new NewWord(idString, symbol, romanj, urlImage, meaning, lessionId + "");
+                    lst.Add(nWord);
                 }
 
 

@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.btnLearnLetter = new System.Windows.Forms.Button();
+            this.btnStudy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLearnLetter
             // 
-            this.btnLearnLetter.Location = new System.Drawing.Point(181, 91);
+            this.btnLearnLetter.Location = new System.Drawing.Point(163, 92);
             this.btnLearnLetter.Name = "btnLearnLetter";
             this.btnLearnLetter.Size = new System.Drawing.Size(75, 23);
             this.btnLearnLetter.TabIndex = 0;
@@ -41,11 +42,22 @@
             this.btnLearnLetter.UseVisualStyleBackColor = true;
             this.btnLearnLetter.Click += new System.EventHandler(this.btnLearnLetter_Click);
             // 
+            // btnStudy
+            // 
+            this.btnStudy.Location = new System.Drawing.Point(163, 149);
+            this.btnStudy.Name = "btnStudy";
+            this.btnStudy.Size = new System.Drawing.Size(75, 23);
+            this.btnStudy.TabIndex = 1;
+            this.btnStudy.Text = "Study";
+            this.btnStudy.UseVisualStyleBackColor = true;
+            this.btnStudy.Click += new System.EventHandler(this.btnStudy_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 396);
+            this.Controls.Add(this.btnStudy);
             this.Controls.Add(this.btnLearnLetter);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +69,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnLearnLetter;
+        private System.Windows.Forms.Button btnStudy;
 
 
 
