@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,14 @@ namespace JPVN.DataAccess
 {
     class DataConnect
     {
-        private MySqlConnection _conn;
+        // private MySqlConnection _conn;
         private string _port;
         private string _server;
         private string _database;
         private string _uid;
         private string _pwd;
+        private string _sqlServer;
+        private SqlConnection _conn = null;
         public DataConnect()
         {
             _port = ConfigurationManager.AppSettings["Port"];
@@ -26,7 +29,7 @@ namespace JPVN.DataAccess
             _database = ConfigurationManager.AppSettings["Database"];
             _uid = ConfigurationManager.AppSettings["Uid"];
             _pwd = ConfigurationManager.AppSettings["Pwd"];
-
+            _sqlServer = ConfigurationManager.AppSettings["connectSqlServer"];
         }
 
         /// <summary>
@@ -37,7 +40,8 @@ namespace JPVN.DataAccess
         {
             try
             {
-                _conn = new MySqlConnection("Server=" + _server + ";Port=" + _port + ";Database=" + _database + ";Uid=" + _uid + ";Pwd=" + _pwd);
+                //_conn = new MySqlConnection("Server=" + _server + ";Port=" + _port + ";Database=" + _database + ";Uid=" + _uid + ";Pwd=" + _pwd);
+                _conn = new SqlConnection(_sqlServer);
                 _conn.Open();
             }
             catch
@@ -54,20 +58,21 @@ namespace JPVN.DataAccess
         /// <param name="typeLetter"></param>
         /// <returns>ArrayList Letter</returns>
         public ArrayList getAllLeter(int typeLetter)
-        {   
-           ArrayList lst = new ArrayList();
+        {
+            ArrayList lst = new ArrayList();
             //get query
-            try{
+            try
+            {
+               
+                    connect();
+                    
 
-            if (_conn == null)
-                connect();
-           
+                //1 is hiragana   , 2 is katakana
 
-            //1 is hiragana   , 2 is katakana
-            
-                MySqlCommand command = _conn.CreateCommand();
-                command.CommandText = "SELECT ID, symbol, Romanj, Image, Audio FROM letter WHERE Type = "+typeLetter;
-                MySqlDataReader reader = command.ExecuteReader();
+                // MySqlCommand command = _conn.CreateCommand();
+                SqlCommand command = _conn.CreateCommand();
+                command.CommandText = "SELECT ID, symbol, Romanj, Image, Audio FROM letter where Type = " + typeLetter;
+                SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     string idString = reader["ID"].ToString();
@@ -76,13 +81,16 @@ namespace JPVN.DataAccess
                     string symbol = reader["symbol"].ToString();
                     string urlImage = reader["Image"].ToString();
                     string urlAudio = reader["Audio"].ToString();
-                    Letter letter = new Letter(id, symbol, romanj, urlImage, urlAudio, 1);
+
+                    Letter letter = new Letter(id, symbol, romanj, urlImage, urlAudio, typeLetter);
                     lst.Add(letter);
                 }
-            
-           
+
+
                 //end if
-            }catch{
+            }
+            catch
+            {
 
             }
             _conn.Close();

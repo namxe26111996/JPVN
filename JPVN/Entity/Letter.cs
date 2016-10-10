@@ -65,6 +65,15 @@ namespace JPVN.Entity
             this.URLAUDIO = urlaudio;
             this.TYPE = type;
         }
-	
+
+        public Letter(string id, string symbol, string romanj, string urlimage, string urlaudio, string type)
+        {   
+            this.ID = int.Parse(id);
+            this.ROMANJ = romanj;
+            this.Symbol = symbol;
+            this.URLIMAGE = urlimage;
+            this.URLAUDIO = urlaudio;
+            this.TYPE = int.Parse(type);
+        }
     }
 }
