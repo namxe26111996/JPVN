@@ -1,0 +1,13 @@
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\bin\Debug\JPVN.exe.config
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\bin\Debug\JPVN.exe
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\bin\Debug\JPVN.pdb
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.Form1.resources
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.Properties.Resources.resources
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.csproj.GenerateResource.Cache
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.exe
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.pdb
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.LetterForm.resources
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\Interop.WMPLib.dll
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.csproj.ResolveComReference.cache
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.csprojResolveAssemblyReference.cache
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.Study.resources
