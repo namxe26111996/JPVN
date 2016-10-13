@@ -10,4 +10,9 @@ C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.LetterForm.resources
 C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\Interop.WMPLib.dll
 C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.csproj.ResolveComReference.cache
 C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.csprojResolveAssemblyReference.cache
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.DetailLession.resources
 C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\JPVN.Study.resources
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\bin\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\Interop.ShockwaveFlashObjects.dll
+C:\Users\Frost\Desktop\Project\JPVN\JPVN\obj\Debug\AxInterop.ShockwaveFlashObjects.dll

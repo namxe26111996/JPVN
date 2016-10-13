@@ -36,7 +36,7 @@ namespace JPVN
                 MessageBox.Show("Connect success!");  
                 _lstHira = _da.getAllLeter(1);               
                 _lstKata = _da.getAllLeter(2);
-              
+                MessageBox.Show(_lstKata.Count+"");
                              
             }
             else

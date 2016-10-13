@@ -47,14 +47,14 @@
             this.btnPrevK = new System.Windows.Forms.Button();
             this.btnNextK = new System.Windows.Forms.Button();
             this.fullLetterH = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.picFullH = new System.Windows.Forms.PictureBox();
+            this.fullLetterK = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.picFullK = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelcontrol = new System.Windows.Forms.Panel();
             this.panelShow = new System.Windows.Forms.Panel();
-            this.fullLetterK = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.picFullK = new System.Windows.Forms.PictureBox();
-            this.picFullH = new System.Windows.Forms.PictureBox();
             this.tabcontrol.SuspendLayout();
             this.hiragana.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -65,13 +65,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureImageK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSpeakerK)).BeginInit();
             this.fullLetterH.SuspendLayout();
-            this.panelcontrol.SuspendLayout();
-            this.panelShow.SuspendLayout();
-            this.fullLetterK.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFullH)).BeginInit();
+            this.fullLetterK.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFullK)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFullH)).BeginInit();
+            this.panelcontrol.SuspendLayout();
+            this.panelShow.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabcontrol
@@ -303,6 +303,57 @@
             this.fullLetterH.Text = "Full Hiraganna";
             this.fullLetterH.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.picFullH);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(601, 277);
+            this.panel1.TabIndex = 0;
+            // 
+            // picFullH
+            // 
+            this.picFullH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFullH.Image = ((System.Drawing.Image)(resources.GetObject("picFullH.Image")));
+            this.picFullH.Location = new System.Drawing.Point(0, 0);
+            this.picFullH.Name = "picFullH";
+            this.picFullH.Size = new System.Drawing.Size(601, 277);
+            this.picFullH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFullH.TabIndex = 0;
+            this.picFullH.TabStop = false;
+            // 
+            // fullLetterK
+            // 
+            this.fullLetterK.Controls.Add(this.panel2);
+            this.fullLetterK.Location = new System.Drawing.Point(4, 22);
+            this.fullLetterK.Name = "fullLetterK";
+            this.fullLetterK.Padding = new System.Windows.Forms.Padding(3);
+            this.fullLetterK.Size = new System.Drawing.Size(607, 283);
+            this.fullLetterK.TabIndex = 3;
+            this.fullLetterK.Text = "Full Katakana";
+            this.fullLetterK.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.picFullK);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(601, 277);
+            this.panel2.TabIndex = 0;
+            // 
+            // picFullK
+            // 
+            this.picFullK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picFullK.Image = ((System.Drawing.Image)(resources.GetObject("picFullK.Image")));
+            this.picFullK.Location = new System.Drawing.Point(0, 0);
+            this.picFullK.Name = "picFullK";
+            this.picFullK.Size = new System.Drawing.Size(601, 277);
+            this.picFullK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFullK.TabIndex = 0;
+            this.picFullK.TabStop = false;
+            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -334,57 +385,6 @@
             this.panelShow.Size = new System.Drawing.Size(615, 309);
             this.panelShow.TabIndex = 3;
             // 
-            // fullLetterK
-            // 
-            this.fullLetterK.Controls.Add(this.panel2);
-            this.fullLetterK.Location = new System.Drawing.Point(4, 22);
-            this.fullLetterK.Name = "fullLetterK";
-            this.fullLetterK.Padding = new System.Windows.Forms.Padding(3);
-            this.fullLetterK.Size = new System.Drawing.Size(607, 283);
-            this.fullLetterK.TabIndex = 3;
-            this.fullLetterK.Text = "Full Katakana";
-            this.fullLetterK.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.picFullH);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(601, 277);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.picFullK);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(601, 277);
-            this.panel2.TabIndex = 0;
-            // 
-            // picFullK
-            // 
-            this.picFullK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFullK.Image = ((System.Drawing.Image)(resources.GetObject("picFullK.Image")));
-            this.picFullK.Location = new System.Drawing.Point(0, 0);
-            this.picFullK.Name = "picFullK";
-            this.picFullK.Size = new System.Drawing.Size(601, 277);
-            this.picFullK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFullK.TabIndex = 0;
-            this.picFullK.TabStop = false;
-            // 
-            // picFullH
-            // 
-            this.picFullH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picFullH.Image = ((System.Drawing.Image)(resources.GetObject("picFullH.Image")));
-            this.picFullH.Location = new System.Drawing.Point(0, 0);
-            this.picFullH.Name = "picFullH";
-            this.picFullH.Size = new System.Drawing.Size(601, 277);
-            this.picFullH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picFullH.TabIndex = 0;
-            this.picFullH.TabStop = false;
-            // 
             // LetterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,13 +407,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureImageK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSpeakerK)).EndInit();
             this.fullLetterH.ResumeLayout(false);
-            this.panelcontrol.ResumeLayout(false);
-            this.panelShow.ResumeLayout(false);
-            this.fullLetterK.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFullH)).EndInit();
+            this.fullLetterK.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picFullK)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFullH)).EndInit();
+            this.panelcontrol.ResumeLayout(false);
+            this.panelShow.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -70,13 +70,13 @@ namespace JPVN.DataAccess
             try
             {
 
-                connect();
-
+               connect();
 
                 //1 is hiragana   , 2 is katakana
                 command = _conn.CreateCommand();
-                reader = command.ExecuteReader();
                 command.CommandText = "SELECT ID, symbol, Romanj, Image, Audio FROM letter where Type = " + typeLetter;
+                reader = command.ExecuteReader();
+                
 
                 while (reader.Read())
                 {
@@ -94,12 +94,17 @@ namespace JPVN.DataAccess
 
                 //end if
             }
-            catch
+            catch(Exception e)
             {
-
+                Console.WriteLine(e);
             }
-            _conn.Close();
+           _conn.Close();
             return lst;
+        }
+
+        public void close()
+        {
+            _conn.Close();
         }
 
         /// <summary>
@@ -119,9 +124,9 @@ namespace JPVN.DataAccess
 
                 
                 command = _conn.CreateCommand();
-                reader = command.ExecuteReader();
+               
                 command.CommandText = "SELECT ID, Symbol, Romanj, Image, Meaning FROM Vocabulary where IdLession = " + lessionId;
-
+                reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     string idString = reader["ID"].ToString();
@@ -130,7 +135,7 @@ namespace JPVN.DataAccess
                     string symbol = reader["Symbol"].ToString();
                     string urlImage = reader["Image"].ToString();
                     string meaning = reader["Meaning"].ToString();
-
+                    Console.WriteLine(romanj);
                     NewWord nWord = new NewWord(idString, symbol, romanj, urlImage, meaning, lessionId + "");
                     lst.Add(nWord);
                 }
@@ -141,6 +146,136 @@ namespace JPVN.DataAccess
             catch
             {
 
+            }
+            _conn.Close();
+            return lst;
+        }
+
+        /// <summary>
+        /// get Listening by lession
+        /// </summary>
+        /// <param name="lessionId"></param>
+        /// <returns></returns>
+        public ArrayList getDataListeningByLession(int lessionId)
+        {
+            ArrayList lst = new ArrayList();
+            //get query
+            try
+            {
+
+                connect();
+
+
+
+                command = _conn.CreateCommand();
+
+                command.CommandText = "SELECT ID , Title , Link , Text , idLession FROM Listen where IdLession = " + lessionId;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string idString = reader["ID"].ToString();
+                    int id = int.Parse(idString);
+                    string title = reader["Title"].ToString();
+                    string link = reader["Link"].ToString();
+                    string text = reader["Text"].ToString();
+                    string idLessionString = reader["idLession"].ToString();
+                    int idLession = int.Parse(idLessionString);
+
+                    Listening lis = new Listening(id, title, link, text, idLession);
+                    lst.Add(lis);
+                }
+
+
+                //end if
+            }
+            catch
+            {
+
+            }
+            _conn.Close();
+            return lst;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lessionId"></param>
+        /// <returns></returns>
+        public ArrayList getQuestListeningByLession(int lessionId)
+        {
+            ArrayList lst = new ArrayList();
+            //get query
+            try
+            {
+
+                connect();
+
+
+
+                command = _conn.CreateCommand();
+
+                command.CommandText = "SELECT ID , Text , Answer , IdType , IdAudio FROM QFillBlank where IdAudio  = " + lessionId ;
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string idString = reader["ID"].ToString();
+                    int id = int.Parse(idString);
+                    string text = reader["Text"].ToString();
+                    string answer = reader["Answer"].ToString();
+                    int idType = int.Parse(reader["IdType"].ToString());
+                    int idAudio = int.Parse(reader["IdAudio"].ToString());
+                    QFillBlank quest = new QFillBlank(id, text, answer, idType, idAudio);
+                    lst.Add(quest);
+                }
+
+
+                //end if
+            }
+            catch
+            {
+
+            }
+            _conn.Close();
+            return lst;
+        }
+
+        /// <summary>
+        /// get all lession
+        /// </summary>
+        /// <returns></returns>
+        public ArrayList getAllLession(){
+            ArrayList lst = new ArrayList();
+            //get query
+            try
+            {
+
+                connect();
+
+
+
+                command = _conn.CreateCommand();
+                
+                command.CommandText = "SELECT ID, Lession,Image FROM Lession";
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    
+                    string idString = reader["ID"].ToString();
+                    int id = int.Parse(idString);
+                  
+                    string lession = reader["Lession"].ToString();
+                    string urlImage = reader["Image"].ToString();
+                    Lession less = new Lession(id, lession,urlImage);
+                    lst.Add(less);
+                
+                }
+
+
+                //end if
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("----------"+e);
             }
             _conn.Close();
             return lst;

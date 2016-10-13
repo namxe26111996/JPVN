@@ -28,8 +28,8 @@ namespace JPVN.Entity
 
         public string Romanj
         {
-            get { return Romanj; }
-            set { Romanj = value; }
+            get { return romanj; }
+            set { romanj = value; }
         }
 
         private string urlImage;
@@ -56,11 +56,11 @@ namespace JPVN.Entity
             set { idLession = value; }
         }
 
-        public NewWord(string id, string symbol, string romanj, string urlimage, string meaning, string idlession)
+        public NewWord(string id, string symbol, string roman, string urlimage, string meaning, string idlession)
         {
             this.ID = int.Parse(id);
             this.Symbol = symbol;
-            this.Romanj = romanj;
+            this.Romanj = roman;
             this.UrlImage = urlimage;
             this.Meaning = meaning;
             this.IdLession = int.Parse(idlession);

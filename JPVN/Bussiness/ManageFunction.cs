@@ -3,7 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -71,6 +73,33 @@ namespace JPVN.Bussiness
             }
             return lstLetter;
         }
+
+        /// <summary>
+        /// get bitmap form url
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns>bitmap</returns>
+        public Bitmap getImageFromUrl(string url)
+        {
+            Bitmap image ;           
+            try
+            {
+                var request = WebRequest.Create(url);
+                
+                using (var response = request.GetResponse())
+                using (var stream = response.GetResponseStream())
+                {
+                    image = (Bitmap)Bitmap.FromStream(stream);
+                }
+
+            }
+            catch
+            {
+                return null;
+            }
+            return image;
+        }
+
 
     }
 }
